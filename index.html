@@ -14232,8 +14232,7 @@ a.anchor-link {
 <span class="n">sg_df</span><span class="p">[</span><span class="s2">&quot;release_year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">release_year</span>
 <span class="n">sg_df</span><span class="p">[</span><span class="s2">&quot;release_year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sg_df</span><span class="p">[</span><span class="s2">&quot;release_year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int64&quot;</span><span class="p">)</span>
 
-<span class="n">display</span><span class="p">(</span><span class="n">sg_df</span><span class="p">[[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-<span class="n">display</span><span class="p">(</span><span class="n">sg_df</span><span class="p">[[</span><span class="s2">&quot;release_year&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sg_df</span><span class="p">[[</span><span class="s2">&quot;release_date&quot;</span><span class="p">,</span><span class="s2">&quot;release_year&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -14273,84 +14272,33 @@ a.anchor-link {
     <tr style="text-align: right;">
       <th></th>
       <th>release_date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2016-05-12</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2017-12-21</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2018-04-24</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2018-12-13</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2003-05-06</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
       <th>release_year</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>2016-05-12</td>
       <td>2016</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>2017-12-21</td>
       <td>2017</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>2018-04-24</td>
       <td>2018</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>2018-12-13</td>
       <td>2018</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>2003-05-06</td>
       <td>2003</td>
     </tr>
   </tbody>
@@ -14519,7 +14467,7 @@ Name: original_price, Length: 40833, dtype: float64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">game_genres</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
 <span class="n">needed_genres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Action&quot;</span><span class="p">,</span> <span class="s2">&quot;Adventure&quot;</span><span class="p">,</span> <span class="s2">&quot;Casual&quot;</span><span class="p">,</span> <span class="s2">&quot;Education&quot;</span><span class="p">,</span> <span class="s2">&quot;RPG&quot;</span><span class="p">,</span> <span class="s2">&quot;Racing&quot;</span><span class="p">,</span> <span class="s2">&quot;Simulation&quot;</span><span class="p">,</span> <span class="s2">&quot;Sports&quot;</span><span class="p">,</span> <span class="s2">&quot;Strategy&quot;</span><span class="p">]</span>
 <span class="n">game_genres</span> <span class="o">=</span> <span class="n">sg_df</span><span class="p">[</span><span class="n">needed_genres</span><span class="p">]</span>
-<span class="n">game_genres</span>
+<span class="n">game_genres</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14630,81 +14578,8 @@ Name: original_price, Length: 40833, dtype: float64</pre>
       <td>0</td>
       <td>1</td>
     </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>40828</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>40829</th>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>40830</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>40831</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>40832</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
   </tbody>
 </table>
-<p>40833 rows × 9 columns</p>
 </div>
 </div>
 
